@@ -10,36 +10,31 @@
 	<string>Renovation</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>8392525c-82e4-462f-9177-b98968382a14++8145</key>
-		<string>https://svn.sinaapp.com/cardspirit/2/IOS</string>
+		<key>E3BD2CBACEB712758A8FF04E6A9BBA3424CD81FA</key>
+		<string>https://github.com/PeterStudio/Renovation.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>client/Renovation/Renovation.xcodeproj</string>
+	<string>Renovation.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>8392525c-82e4-462f-9177-b98968382a14++8145</key>
-		<string>../../../..</string>
-	</dict>
-	<key>IDESourceControlProjectRepositoryRootDictionary</key>
-	<dict>
-		<key>8392525c-82e4-462f-9177-b98968382a14++8145</key>
-		<string>https://svn.sinaapp.com/cardspirit</string>
+		<key>E3BD2CBACEB712758A8FF04E6A9BBA3424CD81FA</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://svn.sinaapp.com/cardspirit/2/IOS/client/Renovation/Renovation.xcodeproj</string>
+	<string>https://github.com/PeterStudio/Renovation.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>8392525c-82e4-462f-9177-b98968382a14++8145</string>
+	<string>E3BD2CBACEB712758A8FF04E6A9BBA3424CD81FA</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
+			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>8392525c-82e4-462f-9177-b98968382a14++8145</string>
+			<string>E3BD2CBACEB712758A8FF04E6A9BBA3424CD81FA</string>
 			<key>IDESourceControlWCCName</key>
-			<string>%E6%BA%90%E7%A0%81</string>
+			<string>Renovation</string>
 		</dict>
 	</array>
 </dict>

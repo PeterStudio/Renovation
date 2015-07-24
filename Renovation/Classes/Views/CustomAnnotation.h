@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <BaiduMapAPI/BMKPointAnnotation.h>
+#import "ForemenListModel.h"
 
 @interface CustomAnnotation : BMKPointAnnotation
 @property (nonatomic, strong) NSString * url;
@@ -15,4 +16,5 @@
 @property (nonatomic, strong) NSString * star;
 @property (nonatomic, strong) NSString * siteNum;
 @property (nonatomic, strong) NSString * workerID;
+@property (nonatomic, strong) ForemenModel * fModel;
 @end

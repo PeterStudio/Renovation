@@ -74,26 +74,20 @@
     [_ratingBarView setImageDeselected:@"start_icon01" halfSelected:nil fullSelected:@"start_icon01_1" andDelegate:nil];
     [_sRateBarView setImageDeselected:@"start_icon01" halfSelected:nil fullSelected:@"start_icon01_1" andDelegate:nil];
     
+    _headImageView.layer.masksToBounds = YES;
+    _headImageView.layer.cornerRadius = 25;
     
-    [SVProgressHUD showWithStatus:@"加载中。。。" maskType:SVProgressHUDMaskTypeClear];
-    [[AppService sharedManager] request_foremanDetail_Http_contractorId:_contractorId success:^(id responseObject) {
-        ForemanDetailModel * foremanDetailModel = (ForemanDetailModel *)responseObject;
-        if ([RETURN_CODE_SUCCESS isEqualToString:foremanDetailModel.retcode]) {
-            ForemanDetailInfoModel * detail = (ForemanDetailInfoModel *)foremanDetailModel.doc;
-            [self refashDataWithForemanDetailInfoModel:detail];
-        }else{
-            [self.navigationController popViewControllerAnimated:YES];
-            [SVProgressHUD showErrorWithStatus:foremanDetailModel.retinfo];
-        }
-    } failure:^(NSError *error) {
-        [self.navigationController popViewControllerAnimated:YES];
-        [SVProgressHUD showErrorWithStatus:OTHER_ERROR_MESSAGE];
-    }];
+    [self refashDataWithForemanDetailInfoModel];
+    
+    _TableView1.hidden = YES;
+    _RecommendListView.hidden = NO;
+    _scrollerView.hidden = YES;
 }
 
 
-- (void)refashDataWithForemanDetailInfoModel:(ForemanDetailInfoModel *)_model{
-    [_headImageView sd_setImageWithURL:[NSURL URLWithString:_model.headUrl] placeholderImage:nil];
+- (void)refashDataWithForemanDetailInfoModel{
+    [_headImageView setImage:[UIImage imageNamed:_model.headUrl]];
+    
     _nameLabel.text = _model.name;
     _appointmentNumLabel.text = [NSString stringWithFormat:@"被预约%@次",_model.frequency];
     [_ratingBarView displayRating:[_model.star floatValue]];
@@ -102,11 +96,11 @@
     _yearLabel.text = [NSString stringWithFormat:@"%@年",_model.year];
     _addressLabel.text = _model.homeTown;
     
-    _dataArr1 = [NSMutableArray arrayWithArray:_model.performances];
-    _dataArr2 = [NSMutableArray arrayWithArray:_model.appraise];
+//    _dataArr1 = [NSMutableArray arrayWithArray:_model.performances];
+//    _dataArr2 = [NSMutableArray arrayWithArray:_model.appraise];
     
-    _currentWorkNumLabel.text = [NSString stringWithFormat:@"正在施工（%lu）",_dataArr1.count];
-    _currentRecommendLabel.text = [NSString stringWithFormat:@"评价详情（%lu）",_dataArr2.count];
+    _currentWorkNumLabel.text = [NSString stringWithFormat:@"正在施工（%d）",[@"1" isEqualToString:_model.contractorId]?12:5];
+    _currentRecommendLabel.text = [NSString stringWithFormat:@"评价详情（%d）",[@"1" isEqualToString:_model.contractorId]?10:3];
     
     [_TableView1 reloadData];
     [_TableView2 reloadData];
@@ -133,6 +127,11 @@
 
 
 - (IBAction)submitBtnClick:(id)sender {
+    [_wTextView resignFirstResponder];
+    if ((int)_sRateBarView.rating == 0) {
+        [SVProgressHUD showErrorWithStatus:@"请先给工长评星哦～"];
+        return;
+    }
     if (!_placeholdLab.hidden) {
         [SVProgressHUD showErrorWithStatus:@"请输入评价内容"];
         return;
@@ -153,22 +152,7 @@
 }
 
 - (IBAction)liJiYuYueClick:(id)sender {
-    HomeSelectViewController * vc = [[HomeSelectViewController alloc] init];
-    vc.callBack = ^(NSString * homeId){
-        NSDictionary * dic = [[NSUserDefaults standardUserDefaults] objectForKey:USERINFO];
-        [SVProgressHUD showWithStatus:@"加载中" maskType:SVProgressHUDMaskTypeClear];
-        [[AppService sharedManager] request_reservate_Http_homeId:homeId userId:[dic objectForKey:@"userId"] contractorId:_contractorId success:^(id responseObject) {
-            BaseModel * baseModel = (BaseModel *)responseObject;
-            if ([RETURN_CODE_SUCCESS isEqualToString:baseModel.retcode]) {
-                [SVProgressHUD showSuccessWithStatus:baseModel.retinfo];
-            }else{
-                [SVProgressHUD showErrorWithStatus:baseModel.retinfo];
-            }
-        } failure:^(NSError *error) {
-            [SVProgressHUD showErrorWithStatus:OTHER_ERROR_MESSAGE];
-        }];
-    };
-    [self.navigationController pushViewController:vc animated:YES];
+    [SVProgressHUD showSuccessWithStatus:@"预约成功"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

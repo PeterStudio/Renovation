@@ -9,7 +9,7 @@
 #import "PTViewController.h"
 #import "RatingBar.h"
 #import "AppService.h"
-
+#import "ForemenListModel.h"
 
 @interface WorkerDetailViewController : PTViewControllerWithBack<UITableViewDelegate, UITableViewDataSource,UITextViewDelegate>
 @property (strong, nonatomic) NSString * contractorId;
@@ -49,4 +49,6 @@
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *bottomLC;
 
+
+@property (strong, nonatomic) ForemenModel * model;
 @end

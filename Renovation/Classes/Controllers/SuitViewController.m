@@ -38,19 +38,22 @@
             return;
         }
     }
-    NSDictionary * dic = [[NSUserDefaults standardUserDefaults] objectForKey:USERINFO];
-    [SVProgressHUD showWithStatus:@"加载中" maskType:SVProgressHUDMaskTypeClear];
-    [[AppService sharedManager] request_feedback_Http_userId:[dic objectForKey:@"userId"] content:_contentTV.text success:^(id responseObject) {
-        BaseModel * baseModel = (BaseModel *)responseObject;
-        if ([RETURN_CODE_SUCCESS isEqualToString:baseModel.retcode]) {
-            [SVProgressHUD showSuccessWithStatus:baseModel.retinfo];
-            [self.navigationController popViewControllerAnimated:YES];
-        }else{
-            [SVProgressHUD showErrorWithStatus:baseModel.retinfo];
-        }
-    } failure:^(NSError *error) {
-        [SVProgressHUD showErrorWithStatus:OTHER_ERROR_MESSAGE];
-    }];
+    [SVProgressHUD showSuccessWithStatus:@"投诉成功！"];
+    [self.navigationController popViewControllerAnimated:YES];
+    
+//    NSDictionary * dic = [[NSUserDefaults standardUserDefaults] objectForKey:USERINFO];
+//    [SVProgressHUD showWithStatus:@"加载中" maskType:SVProgressHUDMaskTypeClear];
+//    [[AppService sharedManager] request_feedback_Http_userId:[dic objectForKey:@"userId"] content:_contentTV.text success:^(id responseObject) {
+//        BaseModel * baseModel = (BaseModel *)responseObject;
+//        if ([RETURN_CODE_SUCCESS isEqualToString:baseModel.retcode]) {
+//            [SVProgressHUD showSuccessWithStatus:baseModel.retinfo];
+//            [self.navigationController popViewControllerAnimated:YES];
+//        }else{
+//            [SVProgressHUD showErrorWithStatus:baseModel.retinfo];
+//        }
+//    } failure:^(NSError *error) {
+//        [SVProgressHUD showErrorWithStatus:OTHER_ERROR_MESSAGE];
+//    }];
 }
 
 - (void)textViewDidChange:(UITextView *)textView{

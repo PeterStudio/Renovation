@@ -33,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _poisearch = [[BMKPoiSearch alloc]init];
+    self.title = @"搜索";
     [self customNavView];
     [self.view setBackgroundColor:UIColorFromRGB(0xf5f5f5)];
     
@@ -50,8 +51,8 @@
 }
 
 - (void)customNavView{
-    UIImage * leftImg = [UIImage imageNamed:@"user_head"];
-    UIImage * rightImg = [UIImage imageNamed:@"top_icon01"];
+    UIImage * leftImg = [UIImage imageNamed:@"back02"];
+//    UIImage * rightImg = [UIImage imageNamed:@"top_icon01"];
     
     UIButton * leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [leftBtn setImage:leftImg forState:UIControlStateNormal];
@@ -60,32 +61,33 @@
     UIBarButtonItem * leftBarItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
     self.navigationItem.leftBarButtonItem = leftBarItem;
     
-    UIButton * rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [rightBtn setImage:rightImg forState:UIControlStateNormal];
-    [rightBtn setFrame:CGRectMake(0, 0, rightImg.size.width, rightImg.size.height)];
-    [rightBtn addTarget:self action:@selector(renovationListVC) forControlEvents:UIControlEventTouchUpInside];
-    [rightBtn setTag:100];
-    UIBarButtonItem * rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
-    self.navigationItem.rightBarButtonItem = rightBarItem;
+//    UIButton * rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [rightBtn setImage:rightImg forState:UIControlStateNormal];
+//    [rightBtn setFrame:CGRectMake(0, 0, rightImg.size.width, rightImg.size.height)];
+//    [rightBtn addTarget:self action:@selector(renovationListVC) forControlEvents:UIControlEventTouchUpInside];
+//    [rightBtn setTag:100];
+//    UIBarButtonItem * rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+//    self.navigationItem.rightBarButtonItem = rightBarItem;
     
-    UIImage * iconImg = [UIImage imageNamed:@"logo01"];
-    UIImage * titleImg = [UIImage imageNamed:@"logo02"];
-    UIView * customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, iconImg.size.width + titleImg.size.width + 9, 44)];
-    UIImageView * icon = [[UIImageView alloc] init];
-    [icon setImage:iconImg];
-    [icon setFrame:CGRectMake(0, (customView.frame.size.height - iconImg.size.height) / 2, iconImg.size.width, iconImg.size.height)];
-    [customView addSubview:icon];
-    
-    UIImageView * title = [[UIImageView alloc] init];
-    [title setFrame:CGRectMake(icon.frame.origin.x + icon.frame.size.width + 9, (customView.frame.size.height - titleImg.size.height) / 2, titleImg.size.width, titleImg.size.height)];
-    [title setImage:titleImg];
-    [customView addSubview:title];
-    self.navigationItem.titleView = customView;
+//    UIImage * iconImg = [UIImage imageNamed:@"logo01"];
+//    UIImage * titleImg = [UIImage imageNamed:@"logo02"];
+//    UIView * customView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, iconImg.size.width + titleImg.size.width + 9, 44)];
+//    UIImageView * icon = [[UIImageView alloc] init];
+//    [icon setImage:iconImg];
+//    [icon setFrame:CGRectMake(0, (customView.frame.size.height - iconImg.size.height) / 2, iconImg.size.width, iconImg.size.height)];
+//    [customView addSubview:icon];
+//    
+//    UIImageView * title = [[UIImageView alloc] init];
+//    [title setFrame:CGRectMake(icon.frame.origin.x + icon.frame.size.width + 9, (customView.frame.size.height - titleImg.size.height) / 2, titleImg.size.width, titleImg.size.height)];
+//    [title setImage:titleImg];
+//    [customView addSubview:title];
+//    self.navigationItem.titleView = customView;
 }
 
 - (void)myInfoVC{
-    PersionViewController * vc = [[PersionViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
+//    PersionViewController * vc = [[PersionViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - UITableViewDataSource

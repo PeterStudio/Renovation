@@ -30,6 +30,8 @@
 }
 
 @property (nonatomic, strong) NSArray * messageArr;
+@property (nonatomic, strong) NSMutableArray * foremenArr;
+@property (nonatomic, strong) NSMutableArray * nearArr;
 @end
 
 @implementation HomeViewController
@@ -64,7 +66,7 @@
     [self config];
     _locService = [[BMKLocationService alloc]init];
     [BMKLocationService setLocationDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
-    [_locService startUserLocationService];
+//    [_locService startUserLocationService];
     _mapView.delegate = self;
     _mapView.showsUserLocation = NO;
     _mapView.userTrackingMode = BMKUserTrackingModeNone;
@@ -90,6 +92,65 @@
 //    } failure:^(NSError *error) {
 //        [SVProgressHUD showErrorWithStatus:OTHER_ERROR_MESSAGE];
 //    }];
+    
+    
+    
+    
+    
+    ForemenModel * fModel1 = [[ForemenModel alloc] init];
+    fModel1.contractorId = @"1";
+    fModel1.name = @"马选集";
+    fModel1.headUrl = @"foremen1";
+    fModel1.star = @"5";
+    fModel1.homeTown = @"安徽省";
+    fModel1.year = @"17";
+    fModel1.distance = @"1.5";
+    fModel1.frequency = @"27";
+    fModel1.tel = @"18211195962";
+    fModel1.lat = @"39.905206";
+    fModel1.lng = @"116.390356";
+
+    ForemenModel * fModel2 = [[ForemenModel alloc] init];
+    fModel2.contractorId = @"2";
+    fModel2.name = @"陈远寿";
+    fModel2.headUrl = @"foremen2";
+    fModel2.star = @"4";
+    fModel2.homeTown = @"安徽省";
+    fModel2.year = @"15";
+    fModel2.distance = @"0.9";
+    fModel2.frequency = @"10";
+    fModel2.tel = @"18610117705";
+    fModel2.lat = @"39.905906";
+    fModel2.lng = @"116.390957";
+    
+    _foremenArr = [[NSMutableArray alloc] initWithObjects:fModel1,fModel2, nil];
+    
+    
+    NearSiteModel * nModel1 = [[NearSiteModel alloc] init];
+    nModel1.nearbySiteId = @"001";
+    nModel1.name = @"001";
+    nModel1.headUrl = @"001";
+    nModel1.distance = @"001";
+    nModel1.num = @"1";
+    nModel1.lat = @"39.905806";
+    nModel1.lng = @"116.390656";
+    
+    NearSiteModel * nModel2 = [[NearSiteModel alloc] init];
+    nModel2.nearbySiteId = @"002";
+    nModel2.name = @"002";
+    nModel2.headUrl = @"001";
+    nModel2.distance = @"001";
+    nModel2.num = @"2";
+    nModel2.lat = @"39.904806";
+    nModel2.lng = @"116.391656";
+    
+    _nearArr = [[NSMutableArray alloc] initWithObjects:nModel1,nModel2, nil];
+    
+    for (ForemenModel * foremenModel in _foremenArr) {
+        [self addForemenAnnotation:foremenModel];
+    }
+    [_mapView setZoomLevel:17];
+    [_mapView setCenterCoordinate:CLLocationCoordinate2DMake(39.905206, 116.390356)animated:YES];
 }
 
 - (void)addForemenAnnotation:(ForemenModel *)foremenModel {
@@ -104,6 +165,7 @@
     animatedAnnotation.star = foremenModel.star;
     animatedAnnotation.siteNum = nil;
     animatedAnnotation.workerID = foremenModel.contractorId;
+    animatedAnnotation.fModel = foremenModel;
     [_mapView addAnnotation:animatedAnnotation];
 }
 
@@ -158,49 +220,18 @@
     [_mapView removeAnnotations:array];
     _isNearWorker = YES;
     
-    NSString * lat = [[NSUserDefaults standardUserDefaults] objectForKey:@"Userlatitude"];
-    NSString * lng = [[NSUserDefaults standardUserDefaults] objectForKey:@"Userlongitude"];
-    NSString * address = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERADDRESS"];
-    [SVProgressHUD showWithStatus:@"努力获取中。。。" maskType:SVProgressHUDMaskTypeClear];
-    [[AppService sharedManager] request_nearbyForemen_Http_lat:lat lng:lng adddress:address page:@"1" num:NUMBER_FOR_REQUEST queryTime:@"FIRST" success:^(id responseObject) {
-        ForemenListModel * foremenListModel = (ForemenListModel *)responseObject;
-        if ([RETURN_CODE_SUCCESS isEqualToString:foremenListModel.retcode]) {
-            NSArray * doc = [NSArray arrayWithArray:foremenListModel.doc];
-            for (ForemenModel * foremenModel in doc) {
-                [self addForemenAnnotation:foremenModel];
-            }
-            [SVProgressHUD showSuccessWithStatus:foremenListModel.retinfo];
-        }else{
-            [SVProgressHUD showErrorWithStatus:foremenListModel.retinfo];
-        }
-    } failure:^(NSError *error) {
-        [SVProgressHUD showErrorWithStatus:OTHER_ERROR_MESSAGE];
-    }];
+    for (ForemenModel * foremenModel in _foremenArr) {
+        [self addForemenAnnotation:foremenModel];
+    }
 }
 
 - (IBAction)nearWorkButtonClick:(id)sender {
     NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
     [_mapView removeAnnotations:array];
     _isNearWorker = NO;
-    
-    NSString * lat = [[NSUserDefaults standardUserDefaults] objectForKey:@"Userlatitude"];
-    NSString * lng = [[NSUserDefaults standardUserDefaults] objectForKey:@"Userlongitude"];
-    NSString * address = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERADDRESS"];
-    [SVProgressHUD showWithStatus:@"努力获取中。。。" maskType:SVProgressHUDMaskTypeClear];
-    [[AppService sharedManager] request_nearbySite_Http_lat:lat lng:lng adddress:address success:^(id responseObject) {
-        NearSiteListModel * nearSiteListModel = (NearSiteListModel *)responseObject;
-        if ([RETURN_CODE_SUCCESS isEqualToString:nearSiteListModel.retcode]) {
-            NSArray * doc = [NSArray arrayWithArray:nearSiteListModel.doc];
-            for (NearSiteModel * nearSite in doc) {
-                [self addNearSiteAnnotation:nearSite];
-            }
-            [SVProgressHUD showSuccessWithStatus:nearSiteListModel.retinfo];
-        }else{
-            [SVProgressHUD showErrorWithStatus:nearSiteListModel.retinfo];
-        }
-    } failure:^(NSError *error) {
-        [SVProgressHUD showErrorWithStatus:OTHER_ERROR_MESSAGE];
-    }];
+    for (NearSiteModel * nearSite in _nearArr) {
+        [self addNearSiteAnnotation:nearSite];
+    }
 }
 
 - (IBAction)workerButtonClick:(id)sender {
@@ -247,6 +278,7 @@
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
 {
     ++startIndex;
+    NSLog(@"index ;%d",startIndex);
     if (startIndex == 1) {
         [_mapView setZoomLevel:14];
         [_mapView setCenterCoordinate:userLocation.location.coordinate animated:YES];
@@ -375,7 +407,7 @@
     UIImageView * icon = [[UIImageView alloc] initWithFrame:CGRectMake(5, 10, 40, 40)];
     icon.layer.masksToBounds = YES;
     icon.layer.cornerRadius = 20;
-    [icon setImage:[UIImage imageNamed:@"head"]];
+    [icon setImage:[UIImage imageNamed:customAn.url]];
     [viewForImage addSubview:icon];
     
     UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(50, 10, 75, 15)];
@@ -431,6 +463,7 @@
     WorkerDetailViewController * vc = [[WorkerDetailViewController alloc] init];
     vc.contractorId = annotation.workerID;
     vc.workerName = annotation.name;
+    vc.model = annotation.fModel;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
