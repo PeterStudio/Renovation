@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SecondTableViewCellIdentifier" rowHeight="95" id="KGk-i7-Jjw" customClass="SecondTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="非常满意" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KJ-Mr-oBC">
+                        <rect key="frame" x="15" y="8" width="60" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-2-5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9XA-JL-zOL">
+                        <rect key="frame" x="245" y="8" width="60" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74o-O9-G6j" customClass="RatingBar">
+                        <rect key="frame" x="15" y="30" width="70" height="15"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="TXE-bH-bfR"/>
+                            <constraint firstAttribute="width" constant="70" id="Tqt-hq-rgS"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还好还好哈哈哈都回家都回家电话回复i法海回复i发哈u回复i返回i好i还回复i" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNX-NK-G5r">
+                        <rect key="frame" x="15" y="53" width="290" height="34"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="9XA-JL-zOL" secondAttribute="trailing" constant="15" id="7rM-L2-TRe"/>
+                    <constraint firstItem="9KJ-Mr-oBC" firstAttribute="top" secondItem="9XA-JL-zOL" secondAttribute="top" id="HXn-bG-pPf"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="nNX-NK-G5r" secondAttribute="bottom" constant="7" id="Nut-8R-kmb"/>
+                    <constraint firstAttribute="bottom" secondItem="nNX-NK-G5r" secondAttribute="bottom" constant="5" id="TVz-hb-bks"/>
+                    <constraint firstItem="9KJ-Mr-oBC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Tu5-tR-gb2"/>
+                    <constraint firstItem="nNX-NK-G5r" firstAttribute="top" secondItem="74o-O9-G6j" secondAttribute="bottom" constant="8" id="Vpo-ST-2vq"/>
+                    <constraint firstItem="74o-O9-G6j" firstAttribute="top" secondItem="9KJ-Mr-oBC" secondAttribute="bottom" constant="4" id="VvO-2n-hAX"/>
+                    <constraint firstItem="9KJ-Mr-oBC" firstAttribute="leading" secondItem="74o-O9-G6j" secondAttribute="leading" id="ZsO-dT-n7L"/>
+                    <constraint firstItem="nNX-NK-G5r" firstAttribute="leading" secondItem="9KJ-Mr-oBC" secondAttribute="leading" id="tB8-Fm-jfN"/>
+                    <constraint firstAttribute="trailing" secondItem="nNX-NK-G5r" secondAttribute="trailing" constant="15" id="tZ7-Yz-EEK"/>
+                    <constraint firstItem="9KJ-Mr-oBC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="wB8-MJ-Q3B"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="TVz-hb-bks"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLab" destination="nNX-NK-G5r" id="9Ux-45-RAr"/>
+                <outlet property="levelLab" destination="9KJ-Mr-oBC" id="Ld0-z0-1c3"/>
+                <outlet property="rateView" destination="74o-O9-G6j" id="iFp-9p-9KV"/>
+                <outlet property="timeLab" destination="9XA-JL-zOL" id="aUJ-3d-nut"/>
+            </connections>
+            <point key="canvasLocation" x="53" y="187.5"/>
+        </tableViewCell>
+    </objects>
+</document>

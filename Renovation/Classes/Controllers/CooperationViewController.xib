@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CooperationViewController">
+            <connections>
+                <outlet property="heightConstraint1" destination="I6D-TP-xdl" id="ak1-o3-HAW"/>
+                <outlet property="heightConstraint2" destination="IUU-Fj-UF0" id="rHX-Zf-d0a"/>
+                <outlet property="heightConstraint3" destination="aJP-SO-5hb" id="6dw-YD-IUt"/>
+                <outlet property="heightConstraint4" destination="fsF-Va-GOr" id="oJC-RM-bNZ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img01" translatesAutoresizingMaskIntoConstraints="NO" id="jZX-uT-WDZ">
+                    <rect key="frame" x="81" y="33" width="158" height="175"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="input_bg01" translatesAutoresizingMaskIntoConstraints="NO" id="3ah-h9-ZKn">
+                    <rect key="frame" x="10" y="226" width="300" height="228"/>
+                    <rect key="contentStretch" x="0.59999999999999998" y="0.59999999999999998" width="0.10000000000000001" height="0.10000000000000001"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="228" id="I6D-TP-xdl"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商务合作" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXv-h8-hLU">
+                    <rect key="frame" x="25" y="258" width="52" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bjgzlm@163.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yv9-Sj-Zln">
+                    <rect key="frame" x="25" y="283" width="103" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系人：于帅" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPt-Br-7is">
+                    <rect key="frame" x="25" y="319" width="78" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系电话：4000000878" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdu-oO-GSv">
+                    <rect key="frame" x="25" y="344" width="140" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="洽谈地址：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YL-dB-XCc">
+                    <rect key="frame" x="25" y="380" width="65" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京市朝阳区建国路88号SOHO现代城C座" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCi-Pg-abq">
+                    <rect key="frame" x="25" y="405" width="245" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="yv9-Sj-Zln" firstAttribute="top" secondItem="gXv-h8-hLU" secondAttribute="bottom" constant="9" id="3Jm-xV-j7v"/>
+                <constraint firstAttribute="centerX" secondItem="jZX-uT-WDZ" secondAttribute="centerX" id="4F1-U3-a8w"/>
+                <constraint firstItem="zPt-Br-7is" firstAttribute="leading" secondItem="gXv-h8-hLU" secondAttribute="leading" id="67I-q7-4eL"/>
+                <constraint firstItem="zPt-Br-7is" firstAttribute="leading" secondItem="yv9-Sj-Zln" secondAttribute="leading" id="BYB-ev-ylO"/>
+                <constraint firstAttribute="trailing" secondItem="3ah-h9-ZKn" secondAttribute="trailing" constant="10" id="Bdl-cC-VFE"/>
+                <constraint firstItem="zPt-Br-7is" firstAttribute="leading" secondItem="zCi-Pg-abq" secondAttribute="leading" id="Crw-3H-MXh"/>
+                <constraint firstItem="gXv-h8-hLU" firstAttribute="top" secondItem="jZX-uT-WDZ" secondAttribute="bottom" constant="50" id="IUU-Fj-UF0"/>
+                <constraint firstItem="zPt-Br-7is" firstAttribute="leading" secondItem="7YL-dB-XCc" secondAttribute="leading" id="JSa-Xw-q7t"/>
+                <constraint firstItem="gXv-h8-hLU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="Qj8-DZ-OO1"/>
+                <constraint firstItem="zCi-Pg-abq" firstAttribute="top" secondItem="7YL-dB-XCc" secondAttribute="bottom" constant="9" id="VPY-qb-QLT"/>
+                <constraint firstItem="zPt-Br-7is" firstAttribute="top" secondItem="yv9-Sj-Zln" secondAttribute="bottom" constant="20" id="aJP-SO-5hb"/>
+                <constraint firstItem="3ah-h9-ZKn" firstAttribute="top" secondItem="jZX-uT-WDZ" secondAttribute="bottom" constant="18" id="afB-Gs-TwX"/>
+                <constraint firstItem="7YL-dB-XCc" firstAttribute="top" secondItem="Sdu-oO-GSv" secondAttribute="bottom" constant="20" id="fsF-Va-GOr"/>
+                <constraint firstItem="Sdu-oO-GSv" firstAttribute="top" secondItem="zPt-Br-7is" secondAttribute="bottom" constant="9" id="l5P-Oo-NLl"/>
+                <constraint firstItem="zPt-Br-7is" firstAttribute="leading" secondItem="Sdu-oO-GSv" secondAttribute="leading" id="wMa-0R-eF4"/>
+                <constraint firstItem="jZX-uT-WDZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="33" id="xKV-rf-b0H"/>
+                <constraint firstItem="3ah-h9-ZKn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="xvQ-MK-OQV"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="img01" width="158" height="175"/>
+        <image name="input_bg01" width="15" height="15"/>
+    </resources>
+</document>

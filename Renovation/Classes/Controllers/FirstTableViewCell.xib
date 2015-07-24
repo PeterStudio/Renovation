@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FirstTableViewCellIdentifier" id="KGk-i7-Jjw" customClass="FirstTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大兴区东大桥18号楼3单元***" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12O-JF-t4d">
+                        <rect key="frame" x="15" y="13" width="192" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="杜先生" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dac-cH-EBt">
+                        <rect key="frame" x="260" y="13" width="45" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="12O-JF-t4d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="4E2-8c-hcf"/>
+                    <constraint firstAttribute="trailing" secondItem="dac-cH-EBt" secondAttribute="trailing" constant="15" id="Bgy-bJ-b9Q"/>
+                    <constraint firstAttribute="centerY" secondItem="dac-cH-EBt" secondAttribute="centerY" id="EVf-1c-KJW"/>
+                    <constraint firstItem="dac-cH-EBt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="12O-JF-t4d" secondAttribute="trailing" constant="10" id="XQy-zR-4eB"/>
+                    <constraint firstAttribute="centerY" secondItem="12O-JF-t4d" secondAttribute="centerY" id="gyW-NW-uo2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="houseNameLab" destination="12O-JF-t4d" id="fre-dP-Jgk"/>
+                <outlet property="userName" destination="dac-cH-EBt" id="GgD-Ch-UpP"/>
+            </connections>
+            <point key="canvasLocation" x="201" y="209"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>360DCF1F-CFDB-4B58-BA32-F8FC3633C473</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Renovation</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8392525c-82e4-462f-9177-b98968382a14++8145</key>
+		<string>https://svn.sinaapp.com/cardspirit/2/IOS</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>client/Renovation/Renovation.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8392525c-82e4-462f-9177-b98968382a14++8145</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>8392525c-82e4-462f-9177-b98968382a14++8145</key>
+		<string>https://svn.sinaapp.com/cardspirit</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://svn.sinaapp.com/cardspirit/2/IOS/client/Renovation/Renovation.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8392525c-82e4-462f-9177-b98968382a14++8145</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8392525c-82e4-462f-9177-b98968382a14++8145</string>
+			<key>IDESourceControlWCCName</key>
+			<string>%E6%BA%90%E7%A0%81</string>
+		</dict>
+	</array>
+</dict>
+</plist>

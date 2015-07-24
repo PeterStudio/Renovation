@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController">
+            <connections>
+                <outlet property="mainTableView" destination="AdL-Ip-WPF" id="fER-WU-Obu"/>
+                <outlet property="searchTF" destination="RAC-q5-Kwh" id="JEo-Pj-ye2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywU-EF-iZ4">
+                    <rect key="frame" x="15" y="10" width="290" height="40"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="input_bg02" translatesAutoresizingMaskIntoConstraints="NO" id="DWO-A6-fik">
+                            <rect key="frame" x="0.0" y="0.0" width="290" height="40"/>
+                            <rect key="contentStretch" x="0.59999999999999998" y="0.59999999999999998" width="0.10000000000000002" height="0.10000000000000002"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_icon01" translatesAutoresizingMaskIntoConstraints="NO" id="Sym-T2-vkq">
+                            <rect key="frame" x="8" y="9" width="17" height="23"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入搜索地址" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RAC-q5-Kwh">
+                            <rect key="frame" x="35" y="5" width="245" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="dao-hP-PZq"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="Cgc-6W-pgv"/>
+                            </connections>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="4Ie-rx-ilV"/>
+                        <constraint firstAttribute="trailing" secondItem="RAC-q5-Kwh" secondAttribute="trailing" constant="10" id="Asj-tF-gSg"/>
+                        <constraint firstItem="DWO-A6-fik" firstAttribute="top" secondItem="ywU-EF-iZ4" secondAttribute="top" id="EJT-28-d4y"/>
+                        <constraint firstItem="DWO-A6-fik" firstAttribute="leading" secondItem="ywU-EF-iZ4" secondAttribute="leading" id="OdE-KB-t2Y"/>
+                        <constraint firstAttribute="centerY" secondItem="Sym-T2-vkq" secondAttribute="centerY" id="ShL-Ca-s61"/>
+                        <constraint firstAttribute="bottom" secondItem="DWO-A6-fik" secondAttribute="bottom" id="UHP-5S-834"/>
+                        <constraint firstAttribute="trailing" secondItem="DWO-A6-fik" secondAttribute="trailing" id="ayq-lJ-7vh"/>
+                        <constraint firstItem="RAC-q5-Kwh" firstAttribute="leading" secondItem="Sym-T2-vkq" secondAttribute="trailing" constant="10" id="cEe-tv-7SV"/>
+                        <constraint firstAttribute="centerY" secondItem="RAC-q5-Kwh" secondAttribute="centerY" id="jei-No-yeG"/>
+                        <constraint firstItem="Sym-T2-vkq" firstAttribute="leading" secondItem="ywU-EF-iZ4" secondAttribute="leading" constant="8" id="m6M-RY-ozi"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AdL-Ip-WPF">
+                    <rect key="frame" x="0.0" y="60" width="320" height="420"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Kaj-mD-5fP"/>
+                        <outlet property="delegate" destination="-1" id="u1r-rY-tIE"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ywU-EF-iZ4" secondAttribute="trailing" constant="15" id="6jo-6X-Gqv"/>
+                <constraint firstItem="ywU-EF-iZ4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="AyN-oP-sut"/>
+                <constraint firstAttribute="trailing" secondItem="AdL-Ip-WPF" secondAttribute="trailing" id="Stw-Jb-hgD"/>
+                <constraint firstItem="ywU-EF-iZ4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="ad9-FJ-VcR"/>
+                <constraint firstItem="AdL-Ip-WPF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dmT-ma-QQe"/>
+                <constraint firstItem="AdL-Ip-WPF" firstAttribute="top" secondItem="ywU-EF-iZ4" secondAttribute="bottom" constant="10" id="kYn-Go-SnK"/>
+                <constraint firstAttribute="bottom" secondItem="AdL-Ip-WPF" secondAttribute="bottom" id="y5i-YF-Cbp"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="add_icon01" width="17" height="23"/>
+        <image name="input_bg02" width="15" height="15"/>
+    </resources>
+</document>

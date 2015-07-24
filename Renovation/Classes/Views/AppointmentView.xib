@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AppointmentView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03t-5v-Lh4">
+                    <rect key="frame" x="10" y="13" width="17" height="18"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大兴区东大桥18号楼3单元1011室（4人）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cs2-FW-PND">
+                    <rect key="frame" x="37" y="14" width="224" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbj-g9-dqs">
+                    <rect key="frame" x="286" y="0.0" width="24" height="44"/>
+                    <state key="normal" image="arrow_top">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="arrow_bottom"/>
+                    <connections>
+                        <action selector="arrowBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="hxr-Hc-vFa"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line_grey_foot_40x1" translatesAutoresizingMaskIntoConstraints="NO" id="koQ-gW-pNd">
+                    <rect key="frame" x="0.0" y="43" width="320" height="1"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="hbj-g9-dqs" secondAttribute="trailing" constant="10" id="3ji-L0-iZH"/>
+                <constraint firstAttribute="bottom" secondItem="koQ-gW-pNd" secondAttribute="bottom" id="Ba8-oP-pR8"/>
+                <constraint firstItem="hbj-g9-dqs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="F2Y-Tw-sXy"/>
+                <constraint firstAttribute="centerY" secondItem="03t-5v-Lh4" secondAttribute="centerY" id="FA1-Ob-yCL"/>
+                <constraint firstItem="03t-5v-Lh4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="PXh-2f-Ocu"/>
+                <constraint firstAttribute="trailing" secondItem="koQ-gW-pNd" secondAttribute="trailing" id="Q2R-fY-TX9"/>
+                <constraint firstItem="hbj-g9-dqs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cs2-FW-PND" secondAttribute="trailing" constant="10" id="Rjk-dI-owe"/>
+                <constraint firstItem="koQ-gW-pNd" firstAttribute="top" secondItem="hbj-g9-dqs" secondAttribute="bottom" id="Z7V-jp-wwC"/>
+                <constraint firstItem="Cs2-FW-PND" firstAttribute="centerY" secondItem="03t-5v-Lh4" secondAttribute="centerY" id="b2C-dV-Bho"/>
+                <constraint firstItem="koQ-gW-pNd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cTV-r8-x3c"/>
+                <constraint firstItem="Cs2-FW-PND" firstAttribute="leading" secondItem="03t-5v-Lh4" secondAttribute="trailing" constant="10" id="m3o-vM-ujA"/>
+                <constraint firstAttribute="bottom" secondItem="hbj-g9-dqs" secondAttribute="bottom" id="o6b-vu-EPq"/>
+                <constraint firstAttribute="centerY" secondItem="hbj-g9-dqs" secondAttribute="centerY" id="y0u-p2-xsv"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Z7V-jp-wwC"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="addressLab" destination="Cs2-FW-PND" id="7wP-CW-8xH"/>
+                <outlet property="arrowBtn" destination="hbj-g9-dqs" id="97p-zU-I45"/>
+                <outlet property="numLab" destination="03t-5v-Lh4" id="bW7-YF-VeP"/>
+            </connections>
+            <point key="canvasLocation" x="391" y="109.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow_bottom" width="24" height="10"/>
+        <image name="arrow_top" width="24" height="10"/>
+        <image name="line_grey_foot_40x1" width="40" height="1"/>
+    </resources>
+</document>
