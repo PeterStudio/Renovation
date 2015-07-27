@@ -96,11 +96,44 @@
     _yearLabel.text = [NSString stringWithFormat:@"%@年",_model.year];
     _addressLabel.text = _model.homeTown;
     
-//    _dataArr1 = [NSMutableArray arrayWithArray:_model.performances];
-//    _dataArr2 = [NSMutableArray arrayWithArray:_model.appraise];
+    PerformancesModel * pModel1 = [[PerformancesModel alloc] init];
+    pModel1.address = @"大兴区东大桥18号楼3单元***";
+    pModel1.customerName = @"贾女士";
+
+    PerformancesModel * pModel2 = [[PerformancesModel alloc] init];
+    pModel2.address = @"朝阳区西直门双子塔2号楼5单元***";
+    pModel2.customerName = @"杜先生";
     
-    _currentWorkNumLabel.text = [NSString stringWithFormat:@"正在施工（%d）",[@"1" isEqualToString:_model.contractorId]?12:5];
-    _currentRecommendLabel.text = [NSString stringWithFormat:@"评价详情（%d）",[@"1" isEqualToString:_model.contractorId]?10:3];
+    _dataArr1 = [[NSMutableArray alloc] initWithObjects:[@"1" isEqualToString:_model.contractorId]?pModel1:pModel2, nil];
+    
+    
+    AppraiseModel * aModel1 = [[AppraiseModel alloc] init];
+    aModel1.content = @"很不错哦";
+    aModel1.star = @"5";
+    aModel1.time = @"20150724082101";
+    aModel1.name =  @"Jack";
+    
+    AppraiseModel * aModel2 = [[AppraiseModel alloc] init];
+    aModel2.content = @"做工不错，用料有保证";
+    aModel2.star = @"5";
+    aModel2.time = @"20150726112120";
+    aModel2.name =  @"追风";
+    
+    AppraiseModel * aModel3 = [[AppraiseModel alloc] init];
+    aModel3.content = @"基本还算满意哦";
+    aModel3.star = @"4";
+    aModel3.time = @"20150725092430";
+    aModel3.name =  @"提拉米苏";
+    
+    if([@"1" isEqualToString:_model.contractorId]){
+        _dataArr2 = [[NSMutableArray alloc] initWithObjects:aModel1,aModel2, nil];
+    }else{
+        _dataArr2 = [[NSMutableArray alloc] initWithObjects:aModel3, nil];
+    }
+//    _dataArr2 = [[NSMutableArray alloc] initWithObjects:pModel2, nil];
+    
+    _currentWorkNumLabel.text = [NSString stringWithFormat:@"正在施工（%d）",[@"1" isEqualToString:_model.contractorId]?1:2];
+    _currentRecommendLabel.text = [NSString stringWithFormat:@"评价详情（%d）",[@"1" isEqualToString:_model.contractorId]?1:1];
     
     [_TableView1 reloadData];
     [_TableView2 reloadData];
@@ -136,19 +169,21 @@
         [SVProgressHUD showErrorWithStatus:@"请输入评价内容"];
         return;
     }
-    NSDictionary * dic = [[NSUserDefaults standardUserDefaults] objectForKey:USERINFO];
-    NSString * star = [NSString stringWithFormat:@"%d",(int)_sRateBarView.rating];
-    [SVProgressHUD showWithStatus:@"加载中" maskType:SVProgressHUDMaskTypeClear];
-    [[AppService sharedManager] request_appraise_Http_userId:[dic objectForKey:@"userId"] contractorId:_contractorId content:_wTextView.text start:star success:^(id responseObject) {
-        BaseModel * baseModel = (BaseModel *)responseObject;
-        if ([RETURN_CODE_SUCCESS isEqualToString:baseModel.retcode]) {
-            [SVProgressHUD showSuccessWithStatus:baseModel.retinfo];
-        }else{
-            [SVProgressHUD showErrorWithStatus:baseModel.retinfo];
-        }
-    } failure:^(NSError *error) {
-        [SVProgressHUD showErrorWithStatus:OTHER_ERROR_MESSAGE];
-    }];
+    [SVProgressHUD showSuccessWithStatus:@"评价成功"];
+    
+//    NSDictionary * dic = [[NSUserDefaults standardUserDefaults] objectForKey:USERINFO];
+//    NSString * star = [NSString stringWithFormat:@"%d",(int)_sRateBarView.rating];
+//    [SVProgressHUD showWithStatus:@"加载中" maskType:SVProgressHUDMaskTypeClear];
+//    [[AppService sharedManager] request_appraise_Http_userId:[dic objectForKey:@"userId"] contractorId:_contractorId content:_wTextView.text start:star success:^(id responseObject) {
+//        BaseModel * baseModel = (BaseModel *)responseObject;
+//        if ([RETURN_CODE_SUCCESS isEqualToString:baseModel.retcode]) {
+//            [SVProgressHUD showSuccessWithStatus:baseModel.retinfo];
+//        }else{
+//            [SVProgressHUD showErrorWithStatus:baseModel.retinfo];
+//        }
+//    } failure:^(NSError *error) {
+//        [SVProgressHUD showErrorWithStatus:OTHER_ERROR_MESSAGE];
+//    }];
 }
 
 - (IBAction)liJiYuYueClick:(id)sender {
