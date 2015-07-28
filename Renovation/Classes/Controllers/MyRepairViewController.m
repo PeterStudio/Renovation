@@ -7,10 +7,11 @@
 //
 
 #import "MyRepairViewController.h"
-#import "NearWorkersTableViewCell.h"
+//#import "NearWorkersTableViewCell.h"
 #import "WorkerDetailViewController.h"
+#import "RepairTableViewCell.h"
 
-#define cellIndentifier @"NearWorkersTableViewCellIdentifier"
+#define cellIndentifier @"RepairTableViewCellIdentifier"
 @interface MyRepairViewController ()
 @property (nonatomic, strong) NSMutableArray * dataSourceArr;
 @end
@@ -22,7 +23,7 @@
 
     self.title = @"我的装修";
     
-    UINib *cellNib = [UINib nibWithNibName:@"NearWorkersTableViewCell" bundle:nil];
+    UINib *cellNib = [UINib nibWithNibName:@"RepairTableViewCell" bundle:nil];
     [_mainTableView registerNib:cellNib forCellReuseIdentifier:cellIndentifier];
     self.prototypeCell  = [_mainTableView dequeueReusableCellWithIdentifier:cellIndentifier];
     
@@ -64,10 +65,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NearWorkersTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+    RepairTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    ForemenModel * temp = (ForemenModel *)[self.dataSourceArr objectAtIndex:indexPath.row];
-    [cell refrashDataWithForemenModel:temp];
+//    ForemenModel * temp = (ForemenModel *)[self.dataSourceArr objectAtIndex:indexPath.row];
+//    [cell refrashDataWithForemenModel:temp];
     return cell;
 }
 
