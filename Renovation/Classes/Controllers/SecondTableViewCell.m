@@ -43,10 +43,6 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSString *strDate = [dateFormatter stringFromDate:date];
     _timeLab.text = strDate;
-    
-    _rateView.height = 15;
-    _rateView.width = 18.2;
-    [_rateView displayRating:[aModel.star floatValue]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

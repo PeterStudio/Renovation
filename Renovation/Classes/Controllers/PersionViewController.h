@@ -10,6 +10,7 @@
 
 @interface PersionViewController : PTViewControllerWithBack
 
+@property (weak, nonatomic) IBOutlet UIButton *headBtn;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint1;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint2;
 

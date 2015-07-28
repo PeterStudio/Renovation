@@ -17,8 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"我的资料";
+    [_headIV setImage:[UIImage imageNamed:@"ghead"]];
+    _headIV.layer.masksToBounds = YES;
+    _headIV.layer.cornerRadius = 30;
+    
+
+    
     // Do any additional setup after loading the view from its nib.
 }
+- (IBAction)resignTF:(id)sender {
+    [_nameTF resignFirstResponder];
+    [_addressTF resignFirstResponder];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -99,7 +99,7 @@
     PerformancesModel * pModel1 = [[PerformancesModel alloc] init];
     pModel1.address = @"大兴区东大桥18号楼3单元***";
     pModel1.customerName = @"贾女士";
-
+    
     PerformancesModel * pModel2 = [[PerformancesModel alloc] init];
     pModel2.address = @"朝阳区西直门双子塔2号楼5单元***";
     pModel2.customerName = @"杜先生";
@@ -132,8 +132,8 @@
     }
 //    _dataArr2 = [[NSMutableArray alloc] initWithObjects:pModel2, nil];
     
-    _currentWorkNumLabel.text = [NSString stringWithFormat:@"正在施工（%d）",[@"1" isEqualToString:_model.contractorId]?1:2];
-    _currentRecommendLabel.text = [NSString stringWithFormat:@"评价详情（%d）",[@"1" isEqualToString:_model.contractorId]?1:1];
+    _currentWorkNumLabel.text = [NSString stringWithFormat:@"正在施工（%d）",[@"1" isEqualToString:_model.contractorId]?1:1];
+    _currentRecommendLabel.text = [NSString stringWithFormat:@"评价详情（%d）",[@"1" isEqualToString:_model.contractorId]?2:1];
     
     [_TableView1 reloadData];
     [_TableView2 reloadData];
@@ -217,11 +217,11 @@
     if (tableView == _TableView1) {
         return 44.0f;
     }else{
-        SecondTableViewCell *cell = (SecondTableViewCell *)self.secondCell;
-        AppraiseModel * aModel = (AppraiseModel *)[_dataArr2 objectAtIndex:indexPath.row];
-        [cell refrashWithAppraiseModel:aModel];
-        CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-        return size.height > 95 ? 1 + size.height:95;
+//        SecondTableViewCell *cell = (SecondTableViewCell *)self.secondCell;
+//        AppraiseModel * aModel = (AppraiseModel *)[_dataArr2 objectAtIndex:indexPath.row];
+//        [cell refrashWithAppraiseModel:aModel];
+//        CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+        return 80;
     }
 }
 

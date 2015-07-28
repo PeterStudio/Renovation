@@ -20,7 +20,8 @@
     NSArray * arr = [NSArray arrayWithArray:pModel.url];
     if (arr.count > 0) {
         UrlModel * uModel = (UrlModel *)[arr objectAtIndex:0];
-        [_headImageView sd_setImageWithURL:[NSURL URLWithString:uModel.thumbnailUrl] placeholderImage:nil];
+//        [_headImageView sd_setImageWithURL:[NSURL URLWithString:uModel.thumbnailUrl] placeholderImage:nil];
+        [_headImageView setImage:[UIImage imageNamed:uModel.thumbnailUrl]];
     }
     _nameLabel.text = pModel.name;
     _numLabel.text = [NSString stringWithFormat:@"%lu张",arr.count];

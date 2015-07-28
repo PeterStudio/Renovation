@@ -34,7 +34,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.sourceArray count];
+    return 1;//[self.sourceArray count];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -52,8 +52,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     WorkSiteListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    PicModel * pModel = (PicModel *)[_sourceArray objectAtIndex:indexPath.row];
-    [cell refrshWithPicModel:pModel];
+//    PicModel * pModel = (PicModel *)[_sourceArray objectAtIndex:indexPath.row];
+//    [cell refrshWithPicModel:pModel];
+    cell.headImageView.image = [UIImage imageNamed:@"s1"];
+    cell.nameLabel.text = @"客厅";
+    cell.numLabel.text = @"5张";
+    
     return cell;
 }
 
@@ -67,8 +71,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    PicModel * pModel = (PicModel *)[_sourceArray objectAtIndex:indexPath.row];
-    _largeImageArray = [NSMutableArray arrayWithArray:pModel.url];
+//    PicModel * pModel = (PicModel *)[_sourceArray objectAtIndex:indexPath.row];
+    _largeImageArray = [[NSMutableArray alloc] initWithObjects:@"s1-1",@"s1-2",@"s1-3",@"s1-4",@"s1-5", nil];
     PhotosViewController      *photos = [[PhotosViewController alloc] init];
     photos.delegate = self;
     photos.datasource = self;
@@ -80,11 +84,15 @@
     return self.largeImageArray.count;
 }
 
-- (NSString *)photosViewUrlAtIndex:(NSInteger)index {
-    UrlModel * uModel = (UrlModel *)[_largeImageArray objectAtIndex:index];
-    return uModel.HDUrl;
-}
+//- (NSString *)photosViewUrlAtIndex:(NSInteger)index {
+////    UrlModel * uModel = (UrlModel *)[_largeImageArray objectAtIndex:index];
+//    return nil;//[_largeImageArray objectAtIndex:index];
+//}
 
+- (UIImage *)photosViewImageAtIndex:(NSInteger)index{
+    UIImage * image = [UIImage imageNamed:[_largeImageArray objectAtIndex:index]];
+    return image;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

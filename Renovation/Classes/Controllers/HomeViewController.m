@@ -128,8 +128,8 @@
     
     NearSiteModel * nModel1 = [[NearSiteModel alloc] init];
     nModel1.nearbySiteId = @"001";
-    nModel1.name = @"001";
-    nModel1.headUrl = @"001";
+    nModel1.name = @"悦溪公馆";
+    nModel1.headUrl = @"s1-1";
     nModel1.distance = @"001";
     nModel1.num = @"1";
     nModel1.lat = @"39.905806";
@@ -137,8 +137,8 @@
     
     NearSiteModel * nModel2 = [[NearSiteModel alloc] init];
     nModel2.nearbySiteId = @"002";
-    nModel2.name = @"002";
-    nModel2.headUrl = @"001";
+    nModel2.name = @"润泽悦溪";
+    nModel2.headUrl = @"s2-1";
     nModel2.distance = @"001";
     nModel2.num = @"2";
     nModel2.lat = @"39.904806";
@@ -434,7 +434,7 @@
     UIImageView * icon = [[UIImageView alloc] initWithFrame:CGRectMake(5, 10, 40, 40)];
     icon.layer.masksToBounds = YES;
     icon.layer.cornerRadius = 20;
-    [icon setImage:[UIImage imageNamed:@"head"]];
+    [icon setImage:[UIImage imageNamed:customAn.url]];
     [viewForImage addSubview:icon];
     
     UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(50, 12, 75, 15)];
@@ -460,6 +460,10 @@
 }
 
 - (void)showMsgWithAnonotation:(CustomAnnotation *)annotation{
+    if ([@"001" isEqualToString:annotation.workerID] || [@"002" isEqualToString:annotation.workerID]) {
+        // 工地
+        return;
+    }
     WorkerDetailViewController * vc = [[WorkerDetailViewController alloc] init];
     vc.contractorId = annotation.workerID;
     vc.workerName = annotation.name;

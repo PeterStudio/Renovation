@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyInfoViewController">
             <connections>
+                <outlet property="addressTF" destination="9y7-vF-lQR" id="BiZ-Iu-NyW"/>
+                <outlet property="headIV" destination="0IT-NS-qY3" id="gte-5x-1xn"/>
+                <outlet property="nameTF" destination="5TD-gG-VOr" id="e9I-rf-UPh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -141,6 +144,7 @@
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="XCF-aQ-eSH" firstAttribute="top" secondItem="EBx-qH-dAd" secondAttribute="bottom" constant="44" id="3bQ-61-I1m"/>
                 <constraint firstAttribute="trailing" secondItem="5TD-gG-VOr" secondAttribute="trailing" constant="15" id="3dh-Ll-rE1"/>
@@ -188,7 +192,16 @@
                 <constraint firstItem="0IT-NS-qY3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="xAe-RR-7wI"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="TDc-BV-PK5" appends="YES" id="uzQ-yQ-ZOO"/>
+            </connections>
+            <point key="canvasLocation" x="196" y="396"/>
         </view>
+        <tapGestureRecognizer id="TDc-BV-PK5">
+            <connections>
+                <action selector="resignTF:" destination="-1" id="kBN-tj-G8S"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="bg01" width="320" height="146"/>

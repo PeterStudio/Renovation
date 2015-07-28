@@ -22,7 +22,8 @@
 }
 
 - (void)refrashDataWithForemenModel:(ForemenModel *)_foremenModel{
-    [_headImage sd_setImageWithURL:[NSURL URLWithString:_foremenModel.headUrl] placeholderImage:nil];
+//    [_headImage sd_setImageWithURL:[NSURL URLWithString:_foremenModel.headUrl] placeholderImage:nil];
+    [_headImage setImage:[UIImage imageNamed:_foremenModel.headUrl]];
     _nameLabel.text = _foremenModel.name;
     _otherLabel.text = [NSString stringWithFormat:@"籍贯：%@   %@年    距离%@公里",_foremenModel.homeTown,_foremenModel.year,_foremenModel.distance];
     NSString * orginStr = [NSString stringWithFormat:@"被预约%@次",_foremenModel.frequency];
@@ -36,7 +37,10 @@
 }
 
 - (void)refrashDataWithPersionModel:(PersionModel *)_persionModel{
-    [_headImage sd_setImageWithURL:[NSURL URLWithString:_persionModel.headUrl] placeholderImage:nil];
+//    [_headImage sd_setImageWithURL:[NSURL URLWithString:_persionModel.headUrl] placeholderImage:nil];
+    [_headImage setImage:[UIImage imageNamed:_persionModel.headUrl]];
+    
+    
     _nameLabel.text = _persionModel.name;
     _otherLabel.text = [NSString stringWithFormat:@"籍贯：%@   %@年    距离%@公里",_persionModel.homeTown,_persionModel.year,_persionModel.distance];
     NSString * orginStr = [NSString stringWithFormat:@"被预约%@次",_persionModel.frequency];

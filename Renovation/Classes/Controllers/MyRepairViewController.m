@@ -8,10 +8,11 @@
 
 #import "MyRepairViewController.h"
 #import "NearWorkersTableViewCell.h"
+#import "WorkerDetailViewController.h"
 
 #define cellIndentifier @"NearWorkersTableViewCellIdentifier"
 @interface MyRepairViewController ()
-
+@property (nonatomic, strong) NSMutableArray * dataSourceArr;
 @end
 
 @implementation MyRepairViewController
@@ -24,24 +25,64 @@
     UINib *cellNib = [UINib nibWithNibName:@"NearWorkersTableViewCell" bundle:nil];
     [_mainTableView registerNib:cellNib forCellReuseIdentifier:cellIndentifier];
     self.prototypeCell  = [_mainTableView dequeueReusableCellWithIdentifier:cellIndentifier];
+    
+    
+    ForemenModel * fModel1 = [[ForemenModel alloc] init];
+    fModel1.contractorId = @"1";
+    fModel1.name = @"马选集";
+    fModel1.headUrl = @"foremen1";
+    fModel1.star = @"5";
+    fModel1.homeTown = @"安徽省";
+    fModel1.year = @"17";
+    fModel1.distance = @"1.5";
+    fModel1.frequency = @"27";
+    fModel1.tel = @"18211195962";
+    fModel1.lat = @"39.905206";
+    fModel1.lng = @"116.390356";
+    
+    ForemenModel * fModel2 = [[ForemenModel alloc] init];
+    fModel2.contractorId = @"2";
+    fModel2.name = @"陈远寿";
+    fModel2.headUrl = @"foremen2";
+    fModel2.star = @"4";
+    fModel2.homeTown = @"安徽省";
+    fModel2.year = @"15";
+    fModel2.distance = @"0.9";
+    fModel2.frequency = @"10";
+    fModel2.tel = @"18610117705";
+    fModel2.lat = @"39.905906";
+    fModel2.lng = @"116.390957";
+    
+    _dataSourceArr = [[NSMutableArray alloc] initWithObjects:fModel1,fModel2, nil];
 }
 
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;//[self.sourceArray count];
+    return 1;//[self.dataSourceArr count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NearWorkersTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    ForemenModel * temp = (ForemenModel *)[self.dataSourceArr objectAtIndex:indexPath.row];
+    [cell refrashDataWithForemenModel:temp];
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 90.0f;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+//    WorkerDetailViewController * vc = [[WorkerDetailViewController alloc] init];
+//    vc.contractorId = annotation.workerID;
+//    vc.workerName = annotation.name;
+//    vc.model = annotation.fModel;
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

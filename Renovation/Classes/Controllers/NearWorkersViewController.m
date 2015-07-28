@@ -42,35 +42,63 @@
     [_mainTableView registerNib:cellNib forCellReuseIdentifier:cellIndentifier];
     self.prototypeCell  = [_mainTableView dequeueReusableCellWithIdentifier:cellIndentifier];
     
-    self.dataSourceArray = [[NSMutableArray alloc] init];
-//    NSDictionary * dic = [[NSUserDefaults standardUserDefaults] objectForKey:USERINFO];
-//    userId = [dic objectForKey:@"userId"];
     
-    latStr = [[NSUserDefaults standardUserDefaults] objectForKey:@"Userlatitude"]?[[NSUserDefaults standardUserDefaults] objectForKey:@"Userlatitude"]:@"39.905206";
-    lngStr = [[NSUserDefaults standardUserDefaults] objectForKey:@"Userlongitude"]?[[NSUserDefaults standardUserDefaults] objectForKey:@"Userlongitude"]:@"116.390356";
-    address = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERADDRESS"]?[[NSUserDefaults standardUserDefaults] objectForKey:@"USERADDRESS"]:@"北京市";
-    queryTime = @"FIRST";
-    _isPulling = YES;
-    _page = 1;
-    _hasMore = YES;
-    __weak UITableView * weaktb = _mainTableView;
-    [weaktb addHeaderWithCallback:^{
-        _isPulling = YES;
-        queryTime = @"FIRST";
-        _page = 1;
-        _hasMore = YES;
-        [self requestDataWithPage:_page];
-        if (_mainTableView.footerHidden) {
-            [_mainTableView setFooterHidden:NO];
-        }
-    }];
-    [weaktb addFooterWithCallback:^{
-        _isPulling = NO;
-        if (_hasMore) {
-            [self requestDataWithPage:++_page];
-        }
-    }];
-    [self requestDataWithPage:_page];
+    
+    ForemenModel * fModel1 = [[ForemenModel alloc] init];
+    fModel1.contractorId = @"1";
+    fModel1.name = @"马选集";
+    fModel1.headUrl = @"foremen1";
+    fModel1.star = @"5";
+    fModel1.homeTown = @"安徽省";
+    fModel1.year = @"17";
+    fModel1.distance = @"1.5";
+    fModel1.frequency = @"27";
+    fModel1.tel = @"18211195962";
+    fModel1.lat = @"39.905206";
+    fModel1.lng = @"116.390356";
+    
+    ForemenModel * fModel2 = [[ForemenModel alloc] init];
+    fModel2.contractorId = @"2";
+    fModel2.name = @"陈远寿";
+    fModel2.headUrl = @"foremen2";
+    fModel2.star = @"4";
+    fModel2.homeTown = @"安徽省";
+    fModel2.year = @"15";
+    fModel2.distance = @"0.9";
+    fModel2.frequency = @"10";
+    fModel2.tel = @"18610117705";
+    fModel2.lat = @"39.905906";
+    fModel2.lng = @"116.390957";
+    self.dataSourceArray = [[NSMutableArray alloc] initWithObjects:fModel1,fModel2, nil];
+    
+    
+    
+    
+//    latStr = [[NSUserDefaults standardUserDefaults] objectForKey:@"Userlatitude"]?[[NSUserDefaults standardUserDefaults] objectForKey:@"Userlatitude"]:@"39.905206";
+//    lngStr = [[NSUserDefaults standardUserDefaults] objectForKey:@"Userlongitude"]?[[NSUserDefaults standardUserDefaults] objectForKey:@"Userlongitude"]:@"116.390356";
+//    address = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERADDRESS"]?[[NSUserDefaults standardUserDefaults] objectForKey:@"USERADDRESS"]:@"北京市";
+//    queryTime = @"FIRST";
+//    _isPulling = YES;
+//    _page = 1;
+//    _hasMore = YES;
+//    __weak UITableView * weaktb = _mainTableView;
+//    [weaktb addHeaderWithCallback:^{
+//        _isPulling = YES;
+//        queryTime = @"FIRST";
+//        _page = 1;
+//        _hasMore = YES;
+//        [self requestDataWithPage:_page];
+//        if (_mainTableView.footerHidden) {
+//            [_mainTableView setFooterHidden:NO];
+//        }
+//    }];
+//    [weaktb addFooterWithCallback:^{
+//        _isPulling = NO;
+//        if (_hasMore) {
+//            [self requestDataWithPage:++_page];
+//        }
+//    }];
+//    [self requestDataWithPage:_page];
 }
 
 - (void)requestDataWithPage:(int)page{
@@ -143,7 +171,7 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [_dataSourceArray count];
+    return 2;//[_dataSourceArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -164,6 +192,7 @@
     WorkerDetailViewController * vc = [[WorkerDetailViewController alloc] init];
     vc.contractorId = foremenModel.contractorId;
     vc.workerName = foremenModel.name;
+    vc.model = foremenModel;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

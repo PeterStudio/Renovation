@@ -38,6 +38,10 @@
     [super viewDidLoad];
     self.title =  @"个人中心";
     
+    [_headBtn setImage:[UIImage imageNamed:@"ghead"] forState:UIControlStateNormal];
+    _headBtn.imageView.layer.masksToBounds = YES;
+    _headBtn.imageView.layer.cornerRadius = 30;
+    
     if (UIScreenHeight == 480) {
         _heightConstraint1.constant = _heightConstraint2.constant = 15;
     }

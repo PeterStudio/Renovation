@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,20 +15,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head" translatesAutoresizingMaskIntoConstraints="NO" id="fAL-nf-Dk6">
-                        <rect key="frame" x="15" y="7" width="100" height="50"/>
+                        <rect key="frame" x="15" y="7" width="80" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="RVQ-b2-Cpr"/>
-                            <constraint firstAttribute="width" constant="100" id="WhI-sc-lha"/>
+                            <constraint firstAttribute="width" constant="80" id="WhI-sc-lha"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客厅" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgK-Zi-3AF">
-                        <rect key="frame" x="130" y="13" width="30" height="18"/>
+                        <rect key="frame" x="110" y="13" width="30" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10张" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Otq-eY-fGw">
-                        <rect key="frame" x="130" y="39" width="28" height="16"/>
+                        <rect key="frame" x="110" y="39" width="28" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -38,7 +38,7 @@
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="CgK-Zi-3AF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="130" id="6xf-cf-tC9"/>
+                    <constraint firstItem="CgK-Zi-3AF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="110" id="6xf-cf-tC9"/>
                     <constraint firstAttribute="centerY" secondItem="fAL-nf-Dk6" secondAttribute="centerY" id="9bJ-Fk-cLY"/>
                     <constraint firstAttribute="centerY" secondItem="BkL-BQ-6PK" secondAttribute="centerY" id="LYL-T3-KH2"/>
                     <constraint firstItem="Otq-eY-fGw" firstAttribute="leading" secondItem="CgK-Zi-3AF" secondAttribute="leading" id="X1Q-FK-7Uz"/>
