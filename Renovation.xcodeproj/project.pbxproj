@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		098FC6F71B678043009555AC /* RepairTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 098FC6F51B678043009555AC /* RepairTableViewCell.m */; };
+		098FC6F81B678043009555AC /* RepairTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 098FC6F61B678043009555AC /* RepairTableViewCell.xib */; };
 		0B4CE2011B0B31A300CF0EB2 /* RegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B4CE2001B0B31A300CF0EB2 /* RegistViewController.xib */; };
 		0B4CE2051B0B3FF100CF0EB2 /* UIButton+PTCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B4CE2041B0B3FF100CF0EB2 /* UIButton+PTCustom.m */; };
 		0B8E1D711B15C25B005C6063 /* NearWorkersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E1D6F1B15C25B005C6063 /* NearWorkersViewController.m */; };
@@ -165,6 +167,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		098FC6F41B678043009555AC /* RepairTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepairTableViewCell.h; sourceTree = "<group>"; };
+		098FC6F51B678043009555AC /* RepairTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepairTableViewCell.m; sourceTree = "<group>"; };
+		098FC6F61B678043009555AC /* RepairTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepairTableViewCell.xib; sourceTree = "<group>"; };
 		0B4CE2001B0B31A300CF0EB2 /* RegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistViewController.xib; sourceTree = "<group>"; };
 		0B4CE2031B0B3FF100CF0EB2 /* UIButton+PTCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+PTCustom.h"; sourceTree = "<group>"; };
 		0B4CE2041B0B3FF100CF0EB2 /* UIButton+PTCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PTCustom.m"; sourceTree = "<group>"; };
@@ -935,6 +940,9 @@
 				0BA029661B1E6082006F5F76 /* MyRepairViewController.h */,
 				0BA029671B1E6082006F5F76 /* MyRepairViewController.m */,
 				0BA029681B1E6082006F5F76 /* MyRepairViewController.xib */,
+				098FC6F41B678043009555AC /* RepairTableViewCell.h */,
+				098FC6F51B678043009555AC /* RepairTableViewCell.m */,
+				098FC6F61B678043009555AC /* RepairTableViewCell.xib */,
 				0BC33B651B1EFE01005D8105 /* MyInfoViewController.h */,
 				0BC33B661B1EFE01005D8105 /* MyInfoViewController.m */,
 				0BC33B671B1EFE01005D8105 /* MyInfoViewController.xib */,
@@ -1071,6 +1079,7 @@
 				0BEBC69D1B1D110900C800F2 /* MyAppointmentViewController.xib in Resources */,
 				0BB789701B291F020059B786 /* AppointmentView.xib in Resources */,
 				0B4CE2011B0B31A300CF0EB2 /* RegistViewController.xib in Resources */,
+				098FC6F81B678043009555AC /* RepairTableViewCell.xib in Resources */,
 				0B9E4B2C1B1FD24D0076CF43 /* AppointmentWorkerViewController.xib in Resources */,
 				0BB61D151B0D861F00212387 /* HomeViewController.xib in Resources */,
 				0BAEB25D1B100C74002F968C /* ServiceAgreementViewController.xib in Resources */,
@@ -1209,6 +1218,7 @@
 				0B9B5BDA1B098B9F00A1D88B /* main.m in Sources */,
 				0BB381011B2676C800817A1F /* NSData+ImageContentType.m in Sources */,
 				0BA029691B1E6082006F5F76 /* MyRepairViewController.m in Sources */,
+				098FC6F71B678043009555AC /* RepairTableViewCell.m in Sources */,
 				0BB7896A1B2910D90059B786 /* HomeSelectViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
